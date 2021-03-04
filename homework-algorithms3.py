@@ -112,3 +112,45 @@ def isPerfect(n: object):
 for n in range(10000):
     if isPerfect(n):
         print(n, " is a perfect number")
+
+
+# Handling recursion limit –
+# # The “sys” module in Python provides a function called setrecursionlimit() to modify the recursion limit in Python.
+# It takes one parameter, the value of the new recursion limit. By default, this value is usually 10^4.
+# If you are dealing with large inputs, you can set it to,
+# 10^6 so that large inputs can be handled without any errors.
+
+# this following function will create an traceback error :
+
+def fact(n):
+    if n == 0:
+        return 1
+
+    return n * fact(n - 1)
+
+
+if __name__ == '__main__':
+    # taking input
+    f = int(input('Enter the number: \n'))
+
+    print(fact(f))
+
+    #the code to fix the error would be to include the setrecursionlimit() function
+
+import sys
+
+sys.setrecursionlimit(10**6)
+
+
+def fact(n):
+    if (n == 0):
+        return 1
+
+    return n * fact(n - 1)
+
+
+if __name__ == '__main__':
+    # taking input
+    f = int(input('Enter the number: \n'))
+
+    print(fact(f))
