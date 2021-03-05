@@ -35,21 +35,8 @@ def fibonacci(n):
 print(fibonacci(9))
 
 
-# question 2 Recursion for factorial
-# # Factorial of a non-negative integer, is multiplication of all
-# integers smaller than or equal to n.
-# For example factorial of 6 is 6*5*4*3*2*1 which is 720.
 
 
-def factorial(n):
-    # single line to find factorial
-    return 1 if (n == 1 or n == 0) else n * factorial(n - 1)
-
-
-# Driver Code
-num = 5
-print("Factorial of", num, "is",
-      factorial(num))
 
 
 # Question 3 Recursion for digital root
@@ -71,86 +58,5 @@ def converttostring(sum):
     return str1
 
 
-# Write a function to check if a number a Perfect or not (link about perfect numbers)
-# Returns true if n is perfect
-def isperfect(n):
-    # To store sum of divisors
-    sums = 1
-
-    # Find all divisors and add them
-    i = 2
-    while i * i <= n:
-        if i == 0:
-            sums = sums + i + n / i
-        else:
-            pass
-        i += 1
-
-    # If sum of divisors is equal to
-    # n, then n is a perfect number
-
-    return True if sums == n and n != 1 else False
 
 
-# Driver program
-print("Below are all perfect numbers till 10000")
-n = 2
-
-
-def imperfect(n):
-    """
-
-    :type n: object
-    """
-    pass
-
-
-def isPerfect(n: object):
-    pass
-
-
-for n in range(10000):
-    if isPerfect(n):
-        print(n, " is a perfect number")
-
-
-# Handling recursion limit –
-# # The “sys” module in Python provides a function called setrecursionlimit() to modify the recursion limit in Python.
-# It takes one parameter, the value of the new recursion limit. By default, this value is usually 10^4.
-# If you are dealing with large inputs, you can set it to,
-# 10^6 so that large inputs can be handled without any errors.
-
-# this following function will create an traceback error :
-
-def fact(n):
-    if n == 0:
-        return 1
-
-    return n * fact(n - 1)
-
-
-if __name__ == '__main__':
-    # taking input
-    f = int(input('Enter the number: \n'))
-
-    print(fact(f))
-
-    #the code to fix the error would be to include the setrecursionlimit() function
-
-import sys
-
-sys.setrecursionlimit(10**6)
-
-
-def fact(n):
-    if (n == 0):
-        return 1
-
-    return n * fact(n - 1)
-
-
-if __name__ == '__main__':
-    # taking input
-    f = int(input('Enter the number: \n'))
-
-    print(fact(f))
